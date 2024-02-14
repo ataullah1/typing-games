@@ -30,10 +30,10 @@
     </section>
 
     <!-- Start Playground Section  -->
-    <section class="">
-      <div>
+    <section class="hidden">
+      <div class="space-y-12">
         <div
-          class="h-[400px] w-full lg:min-w-[1024px] border-[20px] border-solid border-[#010313CC] bg-[#FFFFFFB2] rounded-xl relative flex justify-center items-center"
+          class="h-[300px] w-full lg:min-w-[1024px] border-[20px] border-solid border-[#010313CC] bg-[#FFFFFFB2] rounded-xl relative flex justify-center items-center"
         >
           <p
             class="bg-[#2F2941] text-white rounded-b-lg inline-block absolute -top-3 left-[50%] -translate-x-[50%] px-6 py-1"
@@ -174,11 +174,49 @@
             >
           </div>
         </div>
+
+        <!-- button -->
+
+        <div class="flex justify-between">
+          <button
+            class="loveBtn butt inter text-lg px-7 py-2 rounded-full hover:scale-105 duration-200"
+          >
+            Life &nbsp;<img
+              class="h-5 w-5"
+              src="./images/love.svg"
+              alt="love"
+            />&nbsp;
+            <span>1</span>
+          </button>
+          <button
+            class="butt inter text-lg px-7 py-2 rounded-full bg-[#360490] hover:scale-105 duration-200"
+          >
+            Score &nbsp;<img
+              class="h-5 w-5"
+              src="./images/doller.svg"
+              alt="love"
+            />&nbsp; <span>1</span>
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- Start Play end Section -->
-    <section></section>
+    <section class="">
+      <div class="doneBg rounded-xl p-8 text-center space-y-7">
+        <h1 class="poppins-extrabold text-6xl text-white">
+          Score : <span class="font-thin">14</span>
+        </h1>
+        <button
+          class="text-[#010313] poppins-semibold text-xl bg-white px-7 py-2 rounded-lg hover:scale-105 duration-200 active:bg-slate-300"
+        >
+          Play Agin
+        </button>
+        <p class="poppins-medium text-base text-white">
+          Practice will make you Pro
+        </p>
+      </div>
+    </section>
     <script src="./js/app.js"></script>
   </body>
 </html>
