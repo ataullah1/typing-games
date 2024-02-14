@@ -1,3 +1,3 @@
 # Typing Games
 
-## Play Now: 
+## Play Now: https://ataullah1.github.io/typing-games/
