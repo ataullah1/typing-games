@@ -18,22 +18,37 @@ document.getElementById('btnPlay').addEventListener('click', function () {
   playFun();
 });
 // Enter
-document.addEventListener('keyup', keyUpCall);
-function keyUpCall(e) {
+document.addEventListener('keyup', keyEnterCall);
+function keyEnterCall(e) {
+  const pMass = document.getElementById('enterMass');
   const homeSec = document.getElementById('hemeSection');
   const home = homeSec.classList.contains('hidden');
   if (e.key === 'Enter' && home !== true) {
     playFun();
+  } else {
+    pMass.style.color = 'red';
   }
 }
 
-document.addEventListener('keyup', keyUpCalls);
-function keyUpCalls(e) {
+// function gameGroundPage() {
+document.addEventListener('keyup', keyUpCall);
+// const homeSec = document.getElementById('hemeSection');
+// const home = homeSec.classList.contains('hidden');
+// if (home === true) {
+function keyUpCall(e) {
+  const key = e.key;
   const displayAlpha = document.getElementById('displayAlpha');
-  if (e.key === displayAlpha.innerText.toLowerCase()) {
-    console.log('Your key click id right ');
+  const display = displayAlpha.innerText.toLowerCase();
+  if (key !== 'Enter') {
+    if (key === display || key.toUpperCase() === displayAlpha) {
+      displayAlpha.style.color = 'green';
+    } else {
+      displayAlpha.style.color = 'red';
+    }
   }
 }
+// }
+// }
 
 // Random Alphabet create function
 function randomAlpha() {
