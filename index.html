@@ -236,12 +236,14 @@
     </section>
 
     <!-- Start Play end Section -->
-    <section class="hidden">
+    <section id="gameOver" class="hidden">
       <div class="doneBg rounded-xl p-8 text-center space-y-7">
+        <h1 class="text-3xl text-white">Game is over !</h1>
         <h1 class="poppins-extrabold text-6xl text-white">
-          Score : <span class="font-thin">14</span>
+          Score : <span class="font-thin" id="finalScore"></span>
         </h1>
         <button
+          id="playAgin"
           class="text-[#010313] poppins-semibold text-xl bg-white px-7 py-2 rounded-lg hover:scale-105 duration-200 active:bg-slate-300"
         >
           Play Agin

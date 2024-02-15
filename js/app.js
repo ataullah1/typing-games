@@ -45,7 +45,9 @@ function keyUpCall(e) {
       bgColor(displayAlpha.innerText.toLowerCase());
     } else {
       displayAlpha.style.color = 'red';
+      lifeUp();
       removeScore();
+      gameOver();
     }
   }
 }
@@ -95,8 +97,37 @@ function removeScore() {
 }
 
 // Live upping function
-function liveUp() {
-  const score = document.getElementById('score');
+function lifeUp() {
   const life = document.getElementById('life');
   const lifeText = parseInt(life.innerText);
+  life.innerText = lifeText - 1;
+}
+
+function gameOver() {
+  const playGroundSec = document.getElementById('playGround');
+  const gameOverSec = document.getElementById('gameOver');
+  const life = document.getElementById('life');
+  const lifeNum = parseInt(life.innerText);
+  // console.log(life);
+  if (lifeNum === 0) {
+    playGroundSec.classList.add('hidden');
+    gameOverSec.classList.remove('hidden');
+  }
+  finalScore();
+  document.getElementById('playAgin').addEventListener('click', function () {
+    playAgin();
+  });
+}
+function finalScore() {
+  const finalScore = document.getElementById('finalScore');
+  const scoreUp = document.getElementById('score').innerText;
+  // console.log(scoreUp);
+  finalScore.innerText = scoreUp;
+}
+
+function playAgin() {
+  const gameOverSec = document.getElementById('gameOver');
+  gameOverSec.classList.add('hidden');
+  const home = document.getElementById('hemeSection');
+  home.classList.remove('hidden');
 }
