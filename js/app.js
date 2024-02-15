@@ -1,32 +1,39 @@
 console.log('Hello World');
-
-document.getElementById('btnPlay').addEventListener('click', function () {
+function playFun() {
   const homeSec = document.getElementById('hemeSection');
   homeSec.className = 'hidden';
   //   or
   //   homeSec.classList.add('hidden');
-
+  const playGroundSec = document.getElementById('playGround');
+  playGroundSec.classList.remove('hidden');
   //   PlayGround Page Random Alpha Text
   const displayAlpha = document.getElementById('displayAlpha');
   displayAlpha.innerText = randomAlpha().toUpperCase();
-
   //   Playground page keyboard bg color
   bgColor(displayAlpha.innerText.toLowerCase());
+}
+
+// Button
+document.getElementById('btnPlay').addEventListener('click', function () {
+  playFun();
 });
-// First page enter click then game start, function
+// Enter
+document.addEventListener('keyup', keyUpCall);
 function keyUpCall(e) {
-  if (e.key === 'Enter') {
-    const homeSec = document.getElementById('hemeSection');
-    homeSec.className = 'hidden';
-    const playGroundSec = document.getElementById('playGround');
-    playGroundSec.classList.remove('hidden');
+  const homeSec = document.getElementById('hemeSection');
+  const home = homeSec.classList.contains('hidden');
+  if (e.key === 'Enter' && home !== true) {
+    playFun();
   }
 }
 
-function keyUpCall(e) {
-  
+document.addEventListener('keyup', keyUpCalls);
+function keyUpCalls(e) {
+  const displayAlpha = document.getElementById('displayAlpha');
+  if (e.key === displayAlpha.innerText.toLowerCase()) {
+    console.log('Your key click id right ');
+  }
 }
-document.addEventListener('keyup', keyUpCall);
 
 // Random Alphabet create function
 function randomAlpha() {
