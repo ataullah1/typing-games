@@ -5,8 +5,6 @@ document.getElementById('btnPlay').addEventListener('click', function () {
   homeSec.className = 'hidden';
   //   or
   //   homeSec.classList.add('hidden');
-  const playGroundSec = document.getElementById('playGround');
-  playGroundSec.classList.remove('hidden');
 
   //   PlayGround Page Random Alpha Text
   const displayAlpha = document.getElementById('displayAlpha');
@@ -15,6 +13,20 @@ document.getElementById('btnPlay').addEventListener('click', function () {
   //   Playground page keyboard bg color
   bgColor(displayAlpha.innerText.toLowerCase());
 });
+// First page enter click then game start, function
+function keyUpCall(e) {
+  if (e.key === 'Enter') {
+    const homeSec = document.getElementById('hemeSection');
+    homeSec.className = 'hidden';
+    const playGroundSec = document.getElementById('playGround');
+    playGroundSec.classList.remove('hidden');
+  }
+}
+
+function keyUpCall(e) {
+  
+}
+document.addEventListener('keyup', keyUpCall);
 
 // Random Alphabet create function
 function randomAlpha() {
