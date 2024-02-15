@@ -32,9 +32,6 @@ function keyEnterCall(e) {
 
 // function gameGroundPage() {
 document.addEventListener('keyup', keyUpCall);
-// const homeSec = document.getElementById('hemeSection');
-// const home = homeSec.classList.contains('hidden');
-// if (home === true) {
 function keyUpCall(e) {
   const key = e.key;
   const displayAlpha = document.getElementById('displayAlpha');
@@ -42,6 +39,7 @@ function keyUpCall(e) {
   if (key !== 'Enter') {
     if (key === display || key.toUpperCase() === displayAlpha) {
       displayAlpha.style.color = '#010313';
+      bgColorRemove(displayAlpha.innerText.toLowerCase());
       displayAlpha.innerText = randomAlpha().toUpperCase();
       bgColor(displayAlpha.innerText.toLowerCase());
     } else {
@@ -49,8 +47,6 @@ function keyUpCall(e) {
     }
   }
 }
-// }
-// }
 
 // Random Alphabet create function
 function randomAlpha() {
@@ -69,4 +65,9 @@ function randomAlpha() {
 function bgColor(name) {
   const idName = document.getElementById(name);
   idName.classList.add('bg-[#2CC2D5]');
+}
+// Alpha Bg Color Remove Function
+function bgColorRemove(name) {
+  const idName = document.getElementById(name);
+  idName.classList.remove('bg-[#2CC2D5]');
 }
