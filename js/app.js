@@ -29,6 +29,11 @@ function keyEnterCall(e) {
     pMass.style.color = 'red';
   }
 }
+// document.addEventListener('keyup', keysUpCall);
+// function keysUpCall(e) {
+//   const key = e.key;
+//   bgKeyColor(key);
+// }
 
 // function gameGroundPage() {
 document.addEventListener('keyup', keyUpCall);
@@ -64,10 +69,16 @@ function randomAlpha() {
 // Alpha Bg Color change Function
 function bgColor(name) {
   const idName = document.getElementById(name);
-  idName.classList.add('bg-[#2CC2D5]');
+  idName.classList.add('bg-[#FFA500]');
 }
+// // Alpha Bg Color change Function
+// function bgKeyColor(name) {
+//   const idName = document.getElementById(name);
+//   idName.classList.add('active:bg-[#002B36]');
+//   idName.classList.add('active:active-[#ffffff]');
+// }
 // Alpha Bg Color Remove Function
 function bgColorRemove(name) {
   const idName = document.getElementById(name);
-  idName.classList.remove('bg-[#2CC2D5]');
+  idName.classList.remove('bg-[#FFA500]');
 }
