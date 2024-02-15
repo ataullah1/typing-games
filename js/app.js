@@ -41,7 +41,9 @@ function keyUpCall(e) {
   const display = displayAlpha.innerText.toLowerCase();
   if (key !== 'Enter') {
     if (key === display || key.toUpperCase() === displayAlpha) {
-      displayAlpha.style.color = 'green';
+      displayAlpha.style.color = '#010313';
+      displayAlpha.innerText = randomAlpha().toUpperCase();
+      bgColor(displayAlpha.innerText.toLowerCase());
     } else {
       displayAlpha.style.color = 'red';
     }
