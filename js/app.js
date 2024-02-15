@@ -40,10 +40,12 @@ function keyUpCall(e) {
     if (key === display || key.toUpperCase() === displayAlpha) {
       displayAlpha.style.color = '#010313';
       bgColorRemove(displayAlpha.innerText.toLowerCase());
+      scoreCall();
       displayAlpha.innerText = randomAlpha().toUpperCase();
       bgColor(displayAlpha.innerText.toLowerCase());
     } else {
       displayAlpha.style.color = 'red';
+      removeScore();
     }
   }
 }
@@ -76,4 +78,25 @@ function bgColor(name) {
 function bgColorRemove(name) {
   const idName = document.getElementById(name);
   idName.classList.remove('bg-[#FFA500]');
+}
+
+// add score function
+function scoreCall() {
+  const scoreUp = document.getElementById('score');
+  const scoreText = parseInt(scoreUp.innerText);
+  scoreUp.innerText = scoreText + 1;
+}
+
+// down score function
+function removeScore() {
+  const scoreUp = document.getElementById('score');
+  const scoreText = parseInt(scoreUp.innerText);
+  scoreUp.innerText = scoreText - 3 >= 0 ? scoreText - 3 : scoreText;
+}
+
+// Live upping function
+function liveUp() {
+  const score = document.getElementById('score');
+  const life = document.getElementById('life');
+  const lifeText = parseInt(life.innerText);
 }
