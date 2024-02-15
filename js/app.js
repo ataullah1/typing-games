@@ -29,11 +29,6 @@ function keyEnterCall(e) {
     pMass.style.color = 'red';
   }
 }
-// document.addEventListener('keyup', keysUpCall);
-// function keysUpCall(e) {
-//   const key = e.key;
-//   bgKeyColor(key);
-// }
 
 // function gameGroundPage() {
 document.addEventListener('keyup', keyUpCall);
