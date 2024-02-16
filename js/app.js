@@ -93,7 +93,7 @@ function scoreCall() {
 function removeScore() {
   const scoreUp = document.getElementById('score');
   const scoreText = parseInt(scoreUp.innerText);
-  scoreUp.innerText = scoreText - 3 >= 0 ? scoreText - 3 : scoreText;
+  scoreUp.innerText = scoreText - 1 >= 0 ? scoreText - 1 : scoreText;
 }
 
 // Live upping function
@@ -117,6 +117,7 @@ function gameOver() {
   document.getElementById('playAgin').addEventListener('click', function () {
     playAgin();
   });
+  clickEnter();
 }
 function finalScore() {
   const finalScore = document.getElementById('finalScore');
@@ -130,4 +131,23 @@ function playAgin() {
   gameOverSec.classList.add('hidden');
   const home = document.getElementById('hemeSection');
   home.classList.remove('hidden');
+  document.getElementById('score').innerText = '0';
+  document.getElementById('life').innerText = '3';
+  const display = document
+    .getElementById('displayAlpha')
+    .innerText.toLowerCase();
+  bgColorRemove(display);
+  displayAlpha.style.color = '#010313';
+  document.getElementById('enterMass').style.color = '#fff';
+  document.getElementById('hemeSection').style.textAlign = 'center';
+}
+// Enter click then play agin function
+function clickEnter() {
+  document.addEventListener('keyup', enterCLick);
+  function enterCLick(e) {
+    const key = e.key;
+    if (key === 'Enter') {
+      playAgin();
+    }
+  }
 }
