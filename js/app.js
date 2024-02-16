@@ -27,6 +27,8 @@ function keyEnterCall(e) {
     playFun();
   } else {
     pMass.style.color = 'red';
+    // document.getElementById('life').innerText = '3';
+    // document.getElementById('displayAlpha').style.color = '#010313';
   }
 }
 
@@ -117,7 +119,6 @@ function gameOver() {
   document.getElementById('playAgin').addEventListener('click', function () {
     playAgin();
   });
-  clickEnter();
 }
 function finalScore() {
   const finalScore = document.getElementById('finalScore');
@@ -140,14 +141,4 @@ function playAgin() {
   displayAlpha.style.color = '#010313';
   document.getElementById('enterMass').style.color = '#fff';
   document.getElementById('hemeSection').style.textAlign = 'center';
-}
-// Enter click then play agin function
-function clickEnter() {
-  document.addEventListener('keyup', enterCLick);
-  function enterCLick(e) {
-    const key = e.key;
-    if (key === 'Enter') {
-      playAgin();
-    }
-  }
 }
